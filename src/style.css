@@ -2,64 +2,90 @@
   --primary-blue: #00acdc;
 }
 
-body {
+/* Reset individual de margens conforme boas práticas do guia */
+body,
+header,
+ul,
+li,
+a,
+img {
   margin: 0;
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+/* Header Component */
 .header {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0 15px;
-  background-color: #fff;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px; /* Conforme o 'left: 50px' do logo no Figma */
+  padding-right: 50px; /* Mantém o balanço visual na direita */
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra exata do Figma */
 }
 
 .header__logo-link {
   display: flex;
   align-items: center;
-  margin-right: 40px;
 }
 
 .header__logo-img {
   display: block;
+  width: 40px; /* Tamanho do logo no Figma */
+  height: 40px;
 }
 
 .header__nav {
   display: flex;
   align-items: center;
+  margin-left: auto; /* Empurra o menu de navegação para o alinhamento da direita */
 }
 
 .header__menu-list {
-  margin: 0;
-  padding: 0;
   display: flex;
   list-style: none;
 }
 
-.header__menu-item:not(:last-child) {
-  margin-right: 20px;
+.header__menu-item {
+  margin-right: 20px; /* Distância exata calculada entre os elementos */
+}
+
+.header__menu-item:last-child {
+  margin-right: 0; /* Proibido margem no último item */
 }
 
 .header__menu-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  text-decoration: none;
-  text-transform: uppercase;
+
+  /* Altura controlada estritamente no link */
+  height: 60px; /* Height exato do cabeçalho no Figma */
+
   color: #000;
-  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase; /* Letras maiúsculas via CSS */
+  font-size: 12px; /* Font-size exato do Figma */
+  line-height: 14px;
   position: relative;
-  transition: color 0.2s ease;
-  white-space: nowrap;
+  transition: color 0.2s ease-in-out;
 }
 
 .header__menu-link:hover {
   color: var(--primary-blue);
 }
 
+/* Link Ativo e Linha Inferior (Pseudo-elemento) */
 .header__menu-link.is-active {
   color: var(--primary-blue);
 }
@@ -67,11 +93,10 @@ body {
 .header__menu-link.is-active::after {
   content: '';
   position: absolute;
-  top: 56px;
-  border-radius: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 37px;
-  height: 4px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* Altura da linha inferior conforme Rectangle 2 do Figma */
   background-color: var(--primary-blue);
+  border-radius: 8px; /* Border-radius exato da linha no Figma */
 }
