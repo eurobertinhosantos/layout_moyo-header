@@ -3,12 +3,8 @@
 }
 
 /* Reset individual de margens conforme boas práticas do guia */
-body,
-header,
-ul,
-li,
-a,
-img {
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,43 +18,61 @@ body {
 
 /* Header Component */
 .header {
-  display: flex;
-  align-items: center;
   width: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-sizing: border-box;
 }
 
 .header__logo-link {
   display: flex;
   align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .header__logo-img {
   display: block;
-  width: 40px; /* Tamanho do logo no Figma */
+  width: 40px;
   height: 40px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .header__nav {
   display: flex;
   align-items: center;
-  margin-left: auto; /* Empurra o menu de navegação para o alinhamento da direita */
+  margin-left: auto;
 }
 
 .header__menu-list {
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .header__menu-item {
-  margin-right: 20px; /* Distância exata calculada entre os elementos */
+  margin: 0 20px 0 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .header__menu-item:last-child {
-  margin-right: 0; /* Proibido margem no último item */
+  margin-right: 0;
 }
 
 .header__menu-link {
@@ -74,13 +88,15 @@ body {
   position: relative;
   transition: color 0.2s ease-in-out;
   white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .header__menu-link:hover {
   color: var(--primary-blue);
 }
 
-/* Link Ativo e Linha Inferior (Pseudo-elemento) */
 .header__menu-link.is-active {
   color: var(--primary-blue);
 }
