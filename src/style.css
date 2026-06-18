@@ -25,13 +25,10 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 50px; /* Conforme o 'left: 50px' do logo no Figma */
-  padding-right: 50px; /* Mantém o balanço visual na direita */
+  padding-left: 50px;
+  padding-right: 50px;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra exata do Figma */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .header__logo-link {
@@ -68,14 +65,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Altura controlada estritamente no link */
-  height: 60px; /* Height exato do cabeçalho no Figma */
-
+  height: 60px;
   color: #000;
   text-decoration: none;
-  text-transform: uppercase; /* Letras maiúsculas via CSS */
-  font-size: 12px; /* Font-size exato do Figma */
+  text-transform: uppercase;
+  font-size: 12px;
   line-height: 14px;
   position: relative;
   transition: color 0.2s ease-in-out;
